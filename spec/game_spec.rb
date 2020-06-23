@@ -1,10 +1,10 @@
 require_relative '../lib/game.rb'
 require_relative '../lib/player.rb'
 
-describe Game do 
-  let(:player_one){Player.new('Hassan','X')}
-  let(:player_two){Player.new('Jocyline','O')}
-  let(:game){Game.new(player_one,player_two)}
+describe Game do
+  let(:player_one) { Player.new('Hassan', 'X') }
+  let(:player_two) { Player.new('Jocyline', 'O') }
+  let(:game) { Game.new(player_one, player_two) }
   describe '#finished?' do
     it 'should return true when there is a winner or no available movies' do
       expect(game.finished?).to eql(false)

@@ -5,7 +5,7 @@ describe Board do
   describe 'print_board' do
     it 'Should render the board properly' do
       actual =
-    "    X | 2 | O
+        "    X | 2 | O
     ..|...|..
     X | O | 6
     ..|...|..
