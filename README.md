@@ -66,6 +66,13 @@ This project is part of the Microverse program. The project consists of creating
 ### Milestone four -> Creating the game logic
 - [x] Document your game accordingly so that anyone can download it and play it. 
 
+## Commands
+
+### Running the unit tests
+
+- Run `gem install rspec`
+- Run `rspec --format documentation`
+
 ## Built With
 - Ruby version 2.6.5
 
