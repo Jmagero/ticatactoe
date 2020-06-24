@@ -6,7 +6,29 @@ describe Game do
   let(:player_two) { Player.new('Jocyline', 'O') }
   let(:game) { Game.new(player_one, player_two) }
   describe '#finished?' do
-    it 'should return true when there is a winner or no available movies' do
+    it 'should return true when there is a winner' do
+      game.update(1)
+      game.update(2)
+      game.update(5)
+      game.update(4)
+      game.update(9)
+      expect(game.finished?).to eql(true)
+    end
+    it 'should return true when there are no available moves' do
+      game.update(1)
+      game.update(2)
+      game.update(3)
+      game.update(4)
+      game.update(5)
+      game.update(6)
+      game.update(7)
+      game.update(8)
+      game.update(9)
+      expect(game.finished?).to eql(true)
+    end
+    it 'should return false when there are available moves and no winner' do
+      game.update(1)
+      game.update(2)
       expect(game.finished?).to eql(false)
     end
   end
@@ -37,6 +59,15 @@ describe Game do
       game.update(3)
       game.update(7)
       expect(game.winner).to eql(player_one)
+    end
+
+    it 'winner is nil when there\'s no winner' do
+      game.update(1)
+      game.update(2)
+      game.update(5)
+      game.update(3)
+      game.update(7)
+      expect(game.winner).to eql(nil)
     end
 
     it 'update the available moves' do
